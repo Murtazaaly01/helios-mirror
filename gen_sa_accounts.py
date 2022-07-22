@@ -118,9 +118,7 @@ def _list_sas(iam, project):
         .execute()
     )
 
-    if 'accounts' in resp:
-        return resp['accounts']
-    return []
+    return resp['accounts'] if 'accounts' in resp else []
 
 
 # Create Keys Batch Handler
